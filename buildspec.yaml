@@ -9,11 +9,6 @@ phases:
       - mv ./kubectl /usr/local/bin/kubectl
       - mkdir ~/.kube
       - aws eks --region ap-northeast-2 update-kubeconfig --name eks
-  pre_build:
-    commands:
-      - echo Logging in to Amazon ECR
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/
-
   build:
     commands:
       - echo  Build Starting on 'data'
