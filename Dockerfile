@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install apache2 -y
 
 # 4. 호스트에 있는 파일을 추가
-ADD test.html /var/www/html
+ADD web.html /var/www/html
 
 # 5. 작업공간 이동(=cd)
 WORKDIR /var/www/html
