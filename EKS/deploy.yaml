@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: eks
-          image: 339947993856.dkr.ecr.ap-northeast-2.amazonaws.com/potato:Yong
+          image: AWS_ECR_URI
           ports:
             - containerPort: 8080
           imagePullPolicy: Alwaus
