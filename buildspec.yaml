@@ -27,8 +27,8 @@ phases:
       - echo Build completed on $DATE
       - sed -i.bak 's#AWS_ECR_URI#'"$AWS_ECR_URI"'#' deploy.yaml
       - sed -i.bak 's#DATE_STRING#'"$DATE"'#' deploy.yaml
-      - kubectl apply -f deploy.yaml
-      - kubectl apply -f scv.yaml
+      - kubectl apply -f ./EKS/deploy.yaml
+      - kubectl apply -f ./EKS/svc.yaml
 
 
 
