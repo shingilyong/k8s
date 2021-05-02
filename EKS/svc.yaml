@@ -4,9 +4,9 @@ metadata:
   name: eks-svc
 spec:
   ports:
-    - name: "8080"
-      port: 8081
-      targetPort: 8080
+    - name: "80"
+      port: 80
+      targetPort: 80
   selector:
     app: eks
   type: LoadBalancer
