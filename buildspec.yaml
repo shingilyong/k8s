@@ -1,7 +1,7 @@
 version: 0.2
 phases:
   install:
-    runtime-versons:
+    runtime-versions:
       docker: 18
     command:
       - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
@@ -9,12 +9,14 @@ phases:
       - mv ./kubectl /usr/local/bin/kubectl
       - mkdir ~/.kube
       - aws eks --region ap-northeast-2 update-kubeconfig --name eks
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 339947993856.dkr.ecr.ap-northeast-2.amazonaws.com/
   build:
     commands:
       - echo  Build Starting on 'data'
       - echo Building with gradle
-      - chmod +x ./gradlew
-      - ./gradlew build
       - echo Building the Docker image
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
