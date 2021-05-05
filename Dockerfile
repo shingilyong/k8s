@@ -1,7 +1,7 @@
-FROM openjdk:11.0-jdk
-VOLUME /tmp
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENV JAVA_OPTS=""
-ENTRYPOINT ["java","-jar","/app.jar"]
-a
+FROM ubuntu:18.04
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN ["/bin/bash", "-c", "echo hello potato > index.html"]
+COPY index.html /var/www/html/index.html
+EXPOSE 80
+CMD apachectl -DFOREGROUND
