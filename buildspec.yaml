@@ -25,7 +25,7 @@ phases:
   post_build:
     commands:
       - AWS_ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - DATA='date'
+      - DATE='date'
       - echo Build completed on $DATE
       - sed -i.bak 's#AWS_ECR_URI#'"$AWS_ECR_URI"'#' ./EKS/deploy.yaml
       - sed -i.bak 's#DATE_STRING#'"$DATE"'#' ./EKS/deploy.yaml
