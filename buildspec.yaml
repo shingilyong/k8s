@@ -9,6 +9,7 @@ phases:
       - mv ./kubectl /usr/local/bin/kubectl
       - mkdir ~/.kube
       - aws eks --region ap-northeast-2 update-kubeconfig --name eks1
+      - kubectl get po -n kube-system
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
