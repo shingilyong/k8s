@@ -16,7 +16,7 @@ spec:
         - name: eks
           image: AWS_ECR_URI
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           imagePullPolicy: Always
           env:
             - name: DATE
