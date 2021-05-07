@@ -1,19 +1,21 @@
 **prometheus를 통해서 kubernetes 클러스터를 모니터링 하는 방법과 grana로 대쉬보드 생성하는 방법에 대해 알아보자.**
 
-### 1\. Prometheus 란?
+---
+
+# 1\. Prometheus 란?
 
 **Prometheus는 현재 kubernetes 모니터링에 가장 많이 사용되고 있는 오픈 소스 기반 모니터링 시스템이다.**
 
 **CNCF에 소속되어 있으며, k8s 클러스터 및 컨테이너들을 손쉽게 모니터링 할 수 있다.**
 
-**1\. Prometheus 특징**
+## **1\. Prometheus 특징**
 
 -   **promQL 쿼리 언어를 사용한다.**
 -   **Grafana 같은 대쉬보드 시스템을 이용하여 대쉬보드로 측정 값을 모니터링 할 수 있다.**
 -   **메트릭 이름과 key-value 형태로 식별되는 시계열 데이터를 제공한다.**
 -   **경고(Alert)와 룰셋(Ruleset)을 만들 수 있다.**
 
-**2\. Prometheus 구조**
+## **2\. Prometheus 구조**
 
 **모니터링을 하기 위해 메트릭을 수집하는 방식은 크게 Push 방식과 Pull 방식이 있다.**
 
@@ -23,7 +25,7 @@
 
 **Prometheus는 Pull 방식을 사용하며, 애플리케이션이 작동하면 메트릭 서버가 주기적으로 애플리케이션의 메트릭 엔드포인트에 접속하여 데이터를 가져오는 방식이다.**
 
-[##_Image|kage@cjWcc4/btq4dciHWvs/aR0DabR0bj7rnxafcTdaIK/img.png|alignCenter|data-origin-width="0" data-origin-height="0" width="700" data-ke-mobilestyle="widthContent"|https://prometheus.io/docs/introduction/overview/ 참고||_##]
+
 
 -   **prometheus server : 시계열 데이터를 스크랩하고 저장한다.**
 
