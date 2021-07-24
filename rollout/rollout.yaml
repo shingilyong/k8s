@@ -24,7 +24,7 @@ spec:
     blueGreen: 
       activeService: rollout-bluegreen-active
       previewService: rollout-bluegreen-preview
-      autoPromotionEnabled: true
+      autoPromotionEnabled: flase
 
 ---
 kind: Service
