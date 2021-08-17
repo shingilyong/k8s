@@ -19,11 +19,5 @@ pipeline {
       }
     }
 
-    stage('error') {
-      steps {
-        withKubeConfig()
-      }
-    }
-
   }
 }
