@@ -12,7 +12,7 @@ pipeline {
 
         stage('prepare1') {
           steps {
-            sh 'sh \'echo 123\''
+            sh 'echo \'123\''
           }
         }
 
