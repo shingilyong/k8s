@@ -12,14 +12,14 @@ pipeline {
 
         stage('prepare1') {
           steps {
-            sh 'sh \'echo > 123\''
+            sh 'sh \'echo 123\''
           }
         }
 
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         withKubeConfig()
       }
